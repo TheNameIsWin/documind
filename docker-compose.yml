@@ -1,0 +1,38 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: apps/server/Dockerfile
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      CORS_ORIGIN: http://localhost:3000
+      OLLAMA_BASE_URL: http://ollama:11434
+    volumes:
+      - documind-data:/data
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - '3000:80'
+    depends_on:
+      server:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # Optional local models: docker compose --profile ollama up
+  ollama:
+    image: ollama/ollama:latest
+    profiles: ['ollama']
+    volumes:
+      - ollama-models:/root/.ollama
+    ports:
+      - '11434:11434'
+
+volumes:
+  documind-data:
+  ollama-models:
