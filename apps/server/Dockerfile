@@ -1,7 +1,7 @@
 # Build from the repository root: docker build -f apps/server/Dockerfile .
 
 # ---------- deps ----------
-FROM node:20-alpine AS deps
+FROM node:22-alpine AS deps
 WORKDIR /app
 COPY package.json package-lock.json ./
 COPY apps/server/package.json apps/server/
@@ -14,7 +14,7 @@ RUN npm run build --workspace apps/server \
  && npm prune --omit=dev --workspace apps/server
 
 # ---------- runtime ----------
-FROM node:20-alpine AS runtime
+FROM node:22-alpine AS runtime
 ENV NODE_ENV=production \
     PORT=8080 \
     DATA_DIR=/data

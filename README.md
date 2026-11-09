@@ -10,7 +10,7 @@ or plugs into OpenAI-compatible APIs and local Ollama models.
 
 [![CI](https://github.com/TheNameIsWin/documind/actions/workflows/ci.yml/badge.svg)](https://github.com/TheNameIsWin/documind/actions/workflows/ci.yml)
 ![TypeScript](https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white)
-![Node](https://img.shields.io/badge/Node.js-20+-339933?logo=nodedotjs&logoColor=white)
+![Node](https://img.shields.io/badge/Node.js-22+-339933?logo=nodedotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
 ![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)
 ![License](https://img.shields.io/badge/license-MIT-green)
