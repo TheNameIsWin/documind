@@ -44,7 +44,7 @@ DocuMind treats retrieval as the hard part:
 - ⚡ **Streaming API:** SSE with typed events (`citations` → `token`* → `done`) plus timing metrics
 - 🛡️ **Production hygiene:** zod-validated config and requests, structured logs with request IDs, Helmet, CORS, rate limiting, graceful shutdown, crash-safe atomic persistence
 - 🐳 **Ops-ready:** multi-stage Docker images (non-root, tini, healthchecks), Compose stack, GitHub Actions CI
-- ✅ **Tested:** 50+ unit and integration tests covering chunking, retrieval quality, SSE streaming and API contracts
+- ✅ **Tested:** 120+ unit and integration tests covering chunking, retrieval quality, SSE streaming, API contracts and upstream failure modes (retries, timeouts, malformed streams)
 
 ## Architecture
 
